@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<!-- Assignment 1 by INSERT FULL NAME (INSERT STUDENT NUMBER) -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DPIT128: Assignment 1</title>
+    <style>
+
+      /* BEGIN: Template CSS (DO NOT ALTER/REMOVE) ----------- */
+
+      body {
+        background-color: #ededed;
+        text-align: center;
+      }
+
+      div {
+        background-color: #f8f8f8;
+        border: 1px dotted #808080;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        width: 410px;
+      }
+
+      /* END: Template CSS (DO NOT ALTER/REMOVE) ------------- */
+
+      /* INSERT INTERNAL CSS HERE */
+
+      /* task_1 internal css to design the image border */
+      .task1 {
+        border-style: solid;
+        border-color: red;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width:150px;
+        height: auto;
+      }
+
+      /* task_2 internal css to design the shadow around the image file */
+
+      /*Pseudo class type */
+      video:hover{
+        cursor: url('https://mywebspace.net.au/UOWC128/assignment_1/videos/task_2.mp4'), crosshair;
+      }
+
+      /* single class selector */
+      .shadow{
+        width: 500px;
+        height:auto; 
+        box-shadow: 10px 10px 10px #808080;
+      }
+
+      /* Task_3 internal css to design the font and pixel design of the table */
+
+
+      ul.a{
+        list-style-type: square;
+      }
+
+      .aerial{
+        font-family: Arial;
+        font-size: 15px;
+      }
+      
+      /* Task_4 ordered list internal css */ 
+      .ordered{
+        font-style: italic;
+        list-style-type:lower-alpha;
+      }
+
+      /* task_5 description list internal css */
+      .web_dev{
+        margin-left: 25px;
+        color: #2361b7;
+      }
+
+      dt{
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #bfbfbf;
+      }
+
+      /* Task_6 Table Layout Internal css */
+
+      /* changing the size and auto centering the table */
+      table, th, td{
+        border: 1px solid #808080;
+        border-collapse: collapse;
+        margin:auto;
+        padding: 8px;
+        width: 700px;
+      }
+
+      /* changing the font size and family to be set to calibri */
+      .calib{
+        font-size: 16px;
+        font-family:'Calibri';
+      }
+
+      /* changes the heading text to be bold */
+      caption{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      /* resets the and auto margins the subject code text */
+      .subject{
+        text-align: left;
+      }
+
+      .code{
+        width: 25%;
+      }
+
+      /* changes the shield background color and size */
+      .shield{
+        background-color: #f8f8f8;
+        width:200px;
+      }
+
+      .size{
+        width:85px;
+      }
+
+      /* changes the table heading background color */
+      th{
+        background-color: #d3d3d3;
+      }
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>DPIT128: Assignment 1</h1>
+    <h2>INSERT FULL NAME (INSERT STUDENT NUMBER)</h2>
+    <h3>Date Due: 11/07/2025</h3>
+    <hr>
+    <p style="font-weight: bold;">
+      I have viewed the College&apos;s policy regarding Academic Integrity as provided at the following URL:<br>
+      <a href="https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf" target="_blank">
+        https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf
+      </a>
+    </p>
+    <hr>
+    <h2>Task 1</h2>
+
+    <!-- BEGIN: Task 1 Solution -->
+
+    <img class="task1" alt="Task1_image" src="https://mywebspace.net.au/UOWC128/assignment_1/images/task_1.png">
+
+    <!-- END: Task 1 Solution -->
+
+    <h2>Task 2</h2>
+
+    <!-- BEGIN: Task 2 Solution -->
+     <video class="shadow" width="400" controls>
+      <source src="https://mywebspace.net.au/UOWC128/assignment_1/videos/task_2.mp4" type ="video/mp4">
+     </video>
+
+   <!-- END: Task 2 Solution -->
+
+    <h2>Task 3</h2>
+    <div class="aerial">
+
+      <!-- BEGIN: Task 3 Solution -->
+      <ul class="a">
+        <li>Introduction to web technologies
+          <ul>
+            <li>HTML & CSS</li>
+            <li>HTML Forms</li>
+            <li>XML, DTD, XSD & XSLT</li>
+            <li>Javascript</li>
+            <li>AJAX & JSON</li>
+          </ul>
+        </li>
+        <li>Networks and communications</li>
+        <li>Object oriented design and programming</li>
+        <li>Data management and security</li>
+        <li>System Analysis</li>
+        <li>Problem solving</li>
+        <li>Programming fundamentals</li>
+      </ul>
+
+      <!-- END: Task 3 Solution -->
+
+    </div>
+
+    <h2>Task 4</h2>
+
+    <div>
+
+      <!-- BEGIN: Task 4 Solution -->
+
+      <ol>
+        <li>Introduction to web technologies</li>
+        <li>Networks and communications</li>
+        <li>Object oriented design and programming</li>
+        <li>Data management and security</li>
+        <li>System Analysis</li>
+        <li>Problem solving</li>
+        <li>Programming fundamentals
+          <ol class="ordered">
+            <li>Inputs & outputs</li>
+            <li>Programming Control structures</li>
+            <li>Working with methods</li>
+            <li>Working with classes</li>
+            <li>Instantiating & Messaging Objetcs</li>
+          </ol>
+        </li>
+
+      </ol>
+
+      <!-- END: Task 4 Solution -->
+
+    </div>
+
+    <h2>Task 5</h2>
+
+    <div>
+
+      <!-- BEGIN: Task 5 Solution -->
+
+      <dl class="web_dev">
+
+        <dt>HTML</dt>
+          <dd>Hyper MarkUp Language</dd>
+        
+        <dt>CSS</dt>
+          <dd>Cascading Styling Sheets</dd>
+        
+        <dt>XML</dt>
+          <dd>eXtensible Markup Language</dd>
+        
+        <dt>DTD</dt>
+          <dd>Document Type Definition</dd>
+        
+        <dt>XSD</dt>
+          <dd>XML Schema Definition</dd>
+        
+        <dt>XSLT</dt>
+          <dd>eXtensible Styleshee Language Transformations</dd>
+        
+        <dt>AJAX</dt>
+          <dd>Asynchronus Javascript and XML</dd>
+        
+        <dt>JSON</dt>
+          <dd>Javascript Object Notation</dd>
+
+      </dl>
+
+      <!-- END: Task 5 Solution -->
+
+    </div>
+
+    <h2>Task 6</h2>
+
+    <!-- BEGIN: Task 6 Solution -->
+
+    <!-- Creates the first table to set out what subjects are available-->
+     <table class="calib">
+
+      <tr>
+        <th colspan="2">UOW College Examination Timetable - Summer Session 2024</th>
+      </tr>
+
+      <tr>
+        <td rowspan="4" class="shield"><img src="https://mywebspace.net.au/UOWC128/assignment_1/images/task_6.png" alt="Task_6.png" class="size">
+        <td class="subject">DPIT128 Introduction to web technologies (Wollongong Only)</td>
+      </tr>
+
+      <tr>
+        <td class="subject">DPIT127 Networks & Communications (Wollongong Only)</td>
+      </tr>
+
+      <tr>
+        <td class="subject">DPIT114 System Analysis (Wollongong & South Western Sydney)</td>
+      </tr>
+
+      <tr>
+        <td class="subject">DPIT111 Python fundamentals (Wollongong & South Western Sydney)</td>
+      </tr>
+
+     </table>
+
+     <!-- Creates the second table to display the examination information-->
+    <table class="calib">
+
+      <tr>
+        <th colspan="4">Examination, Room & Duration</th>
+      </tr>
+
+      <tr class="code">
+        <td>DPIT128</td>
+        <td>DPIT127</td>
+        <td>DPIT114</td>
+        <td>DPIT111</td>
+      </tr>
+
+      <tr>
+        <td>8:30am-12:30pm</td>
+        <td>1:30pm-4:30pm</td>
+        <td>8:30am-11:30am</td>
+        <td>1:30pm-3:30pm</td>
+      </tr>
+
+      <tr>
+        <td>30.108</td>
+        <td>30.109</td>
+        <td>27.103 & 30.110</td>
+        <td>27.104 & 30.110</td>
+      </tr>
+
+      <tr>
+        <td>3 hours</td>
+        <td>3 hours</td>
+        <td>3 hours</td>
+        <td>2 hours</td>
+      </tr>
+      
+    </table>
+
+    <!-- END: Task 6 Solution -->
+
+    <p>&copy; RAMI ALASADY</p>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<!-- Assignment 4 (Task ?) by INSERT FULL NAME (INSERT STUDENT NUMBER) -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DPIT128: Assignment 4 (Task 5)</title>
+    <style>
+
+      /* BEGIN: Template CSS (DO NOT ALTER/REMOVE) ----------- */
+
+      body {
+        background-color: #ededed;
+        text-align: center;
+      }
+
+      input:focus, select:focus {
+        box-shadow: 0px 0px 1px 1px #95b7ee;
+        outline: none;
+      }
+
+      /* END: Template CSS (DO NOT ALTER/REMOVE) ------------- */
+
+      /* INSERT INTERNAL CSS HERE */
+
+      /* creates the container div to allow for application of the widget containers */
+      .container{
+        background-color: #dbdbdb;
+        border: 1px dotted #a8a8a8;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* applies styling to the number blocks */
+      input[type="text"] {
+        display: inline-block;
+        background-color: #ecf2f4;
+        border: 1px dotted #468499;
+        color: #19538c;
+        font: bold 40px arial;
+        height: 75px;
+        text-align: center;
+        width: 75px;
+      }
+
+      /* applies styling to all labels */
+      label{
+        font: bold 22px courier;
+        color: #76797a;
+        padding:5px;
+        display: inline-block;
+      }
+
+      /* applies styling to all tables, th and table descriptions as well */
+      table,th,td{
+        border: 1px dotted #468499;
+        height: 10px;
+        width: 300px;
+      }
+
+      /* changes table head */
+      th{
+        background-color: #ecf2f4;
+        color: #525455;
+        text-align: left;
+        margin: 20px;
+      }
+
+      /* changes table descriptions */
+      td{
+        color: #2f3030;
+        text-align: center;
+      }
+
+      /* applies the start button */
+      input[type="button"] {
+        background-color: #ecf2f4;
+        border-radius: 3px;
+        color: #45565c;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        padding: 10px;
+        width: 100px;
+      }
+
+      input[type="button"]:hover {
+        cursor: pointer;
+      }
+
+    </style>
+    <script>
+
+      // INSERT INTERNAL JAVASCRIPT HERE
+
+      function collectData(){
+
+        //creates an array for all the values inputed
+        const numberArray = [
+          +document.getElementById('number-1').value,
+          +document.getElementById('number-2').value,
+          +document.getElementById('number-3').value,
+          +document.getElementById('number-4').value,
+          +document.getElementById('number-5').value,
+          +document.getElementById('number-6').value
+        ]
+
+        //creates an empty output to append into the html
+        var output = "";
+
+        //performs basic input validation 
+
+        for (let index = 0; index < numberArray.length; index++){
+          if (numberArray[index] < 1 || numberArray[index] > 99 || isNaN(numberArray[index])){
+            const errorImage = document.getElementById('output-div');
+
+            errorImage.innerHTML = "<img src='https://mywebspace.net.au/UOWC128/assignment_4/images/error_state.png' alt='error-image'>"; 
+            //breaks the function if an error occurs
+            return;
+          }
+        }
+
+        //Setting up the table for each function to work 
+
+        output += "<table border='1' style='margin:auto; border-collapse: collapse; padding: 8px;'>";
+        //Creating array tablerow
+        let length = numberArray.length;
+        output += "<tr><th>Number of Values</th>";
+        output += "<td>" + length + "</td></tr>";
+        //creating sum for the arrays 
+        let sum = 0;
+        numberArray.forEach(x => {
+          sum += Number(x);
+        });
+        output += "<tr><th>Sum of Values</th>";
+        output += "<td>" + sum + "</td></tr>";
+
+        //creating average total within the array 
+        let average = sum / numberArray.length;
+        //rounding to the second decimal point 
+        average = average.toFixed(2);
+
+        output += "<tr><th>Average of Values</th>";
+        output += "<td>" + average + "</td></tr>";
+
+        //finding the range of the array
+        const min = Math.min(...numberArray);
+        const max = Math.max(...numberArray);
+
+        //calculating the range 
+        const range = max - min;
+        output += "<tr><th>Range of Values</th>";
+        output += "<td>" + range + "</td></tr>";
+
+        //Allowing for min value
+        output += "<tr><th>Lowest Values</th>";
+        output += "<td>" + min + "</td></tr>";
+
+        //Allowing for the max value 
+        output += "<tr><th>Highest Value</th>";
+        output += "<td>" + max + "</td></tr>";
+
+        //finding the median of the array 
+        const sortedArr = numberArray.slice().sort((a,b) => {
+          return a - b
+        });
+        const mid = Math.floor(sortedArr.length/2);
+
+        let median;
+
+        if (sortedArr.length % 2 === 0){
+          //even length: average two middle numbers in a even array
+          median = (sortedArr[mid - 1] + sortedArr[mid]) /2;
+        } else {
+          median = sortedArr[mid];
+        }
+
+        //rounds the median to the second decimal spot
+
+        median = parseFloat(median.toFixed(2));
+
+        output += "<tr><th>Median Value</th>";
+        output += "<td>" + median + "</td></tr>";
+        
+        //ending table setup
+        output += "</table>";
+
+        document.getElementById('output-div').innerHTML = output;
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>DPIT128: Assignment 4</h1>
+    <h2>INSERT FULL NAME (INSERT STUDENT NUMBER)</h2>
+    <h3>Date Due: 29/08/2025</h3>
+    <hr>
+    <p style="font-weight: bold;">
+      I have viewed the College&apos;s policy regarding Academic Integrity as provided at the following URL:<br>
+      <a href="https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf" target="_blank">
+        https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf
+      </a>
+    </p>
+    <hr>
+    <h2>Task 5: Arrays</h2>
+
+    <!-- BEGIN: Task ? Solution -->
+
+    <h3>Please enter 6 numbers between 1 and 99 inclusive</h3>
+    
+    <!-- Allows for the seperate number boxes to be applied, allowing for the proper spacing and margning of the table-->
+    <!--1st number-->
+    <div class="container">
+      <input type="text" id="number-1" maxlength="2" autofocus>
+      <div>
+        <label for="number-1">1</label>
+      </div>
+    </div>
+
+    <!--2nd number-->
+    <div class="container">
+      <input type="text" id="number-2" maxlength="2">
+      <div>
+        <label for="number-2">2</label>
+      </div>
+    </div>
+
+    <!--3rd number-->
+    <div class="container">
+      <input type="text" id="number-3" maxlength="2">
+      <div>
+        <label for="number-3">3</label>
+      </div>
+    </div>
+
+    <!--4th number-->
+    <div class="container">
+      <input type="text" id="number-4" maxlength="2">
+      <div>
+        <label for="number-4">4</label>
+      </div>
+    </div>
+
+    <!--5th number-->
+    <div class="container">
+      <input type="text" id="number-5" maxlength="2">
+      <div>
+        <label for="number-5">5</label>
+      </div>
+    </div>
+
+    <!--6th number-->
+    <div class="container">
+      <input type="text" id="number-6" maxlength="2">
+      <div>
+        <label for="number-6">6</label>
+      </div>
+    </div>
+    
+    <!-- Creates start button to call upon the collectdata function-->
+    <div>
+      <input type="button" value="start" onclick="collectData();">
+    </div>
+    <!-- Creates an container div to append into the html-->
+    <div id="output-div"></div>
+
+    <!-- END: Task ? Solution -->
+
+    <p>&copy; Rami Alasady</p>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<!-- Assignment 4 (Task ?) by INSERT FULL NAME (INSERT STUDENT NUMBER) -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DPIT128: Assignment 4 (Task 1)</title>
+    <style>
+
+      /* BEGIN: Template CSS (DO NOT ALTER/REMOVE) ----------- */
+
+      body {
+        background-color: #ededed;
+        text-align: center;
+      }
+      input:focus, select:focus {
+        box-shadow: 0px 0px 1px 1px #95b7ee;
+        outline: none;
+      }
+
+      /* END: Template CSS (DO NOT ALTER/REMOVE) ------------- */
+
+      /* INSERT INTERNAL CSS HERE */
+
+      /* allows for the image contianer to change the styling */
+      .imageContainer {
+        margin: 10px;
+        width: 110px;
+        border: 1px dotted #808080;
+        border-radius: 5px 15px;
+      }
+
+      /* changes the input styling */
+      input {
+        width: 500px;
+        border:  1px dotted #808080;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+    </style>
+    <script>
+
+      // INSERT INTERNAL JAVASCRIPT HERE
+
+      //first function usage to help enable the alert and prompt text
+      function java_event1(){
+        //sets person as a variables prompt 
+        let person = prompt("Please ente your name");
+
+        if (person != null) {
+          alert("You have performed a \"dbclick\" event, "+ person+"!");
+        }
+
+      }
+
+      //second function usage for css
+      function java_event2(){
+        //Allows for the text to change when hovering over the second image using html ID's
+        document.getElementById('secondImage').addEventListener('mouseover',function(){
+          //allows for the text to be a variable for ease of usage 
+          const text = document.getElementById('changeText');
+          
+          //changes the text into the desired out when scrolling over 
+          text.textContent = 'You have performed a \"mousemove\" event!';
+          text.style.color = '#009900';
+          text.style.fontFamily = 'Courier';
+          text.style.textShadow = '3px 3px 3px #a6a6a6';
+        });
+
+        //Allows for the text to return to normal 
+        document.getElementById('secondImage').addEventListener('mouseout', function(){
+          //iniates the text as a variables for ease of usage 
+          const text = document.getElementById('changeText');
+
+          //changes the text back to its orignal state 
+          text.textContent = 'Place your mouse over the second image to change this text!';
+          text.style.color = '';
+          text.style.fontFamily = '';
+          text.style.textShadow = '';
+        });
+      };
+
+      //third function usage for javascript
+      function java_event3(){
+        //set variables for calling over the elements id's
+        const thirdImage = document.getElementById('thirdImage');
+        const image3text = document.getElementById('image3text');
+
+        thirdImage.addEventListener('wheel',function(event){
+
+          image3text.value = 'You have performed a \"wheel\" event!';
+          image3text.style.color = '#ff0000';
+          image3text.style.fontFamily = 'Arial';
+          image3text.style.fontStyle = 'italic';
+
+        });
+      };
+
+      //Runs script once DOM has been passed to allow for the script to find the nessecary elements 
+      document.addEventListener('DOMContentLoaded',function(){
+        java_event2();
+        java_event3();
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1>DPIT128: Assignment 4</h1>
+    <h2>Rami Alasady (9398533)</h2>
+    <h3>Date Due: 29/08/2025</h3>
+    <hr>
+    <p style="font-weight: bold;">
+      I have viewed the College&apos;s policy regarding Academic Integrity as provided at the following URL:<br>
+      <a href="https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf" target="_blank">
+        https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf
+      </a>
+    </p>
+    <hr>
+    <h2>Task 1: DOM EVENTS & JAVASCRIPT HANDLER</h2>
+
+    <!-- BEGIN: Task 1 Solution -->
+
+    <!-- Applies the images into a container-->
+    <div>
+      <img class="imageContainer" ondblclick="java_event1()"  alt="HTML5 Internal image" src="https://mywebspace.net.au/UOWC128/assignment_4/images/html_5.png">
+      <img class="imageContainer" id='secondImage' alt="CSS3 Internal image" src="https://mywebspace.net.au/UOWC128/assignment_4/images/css_3.png">
+      <img class ="imageContainer" id='thirdImage' alt="JavaScript internal image" src="https://mywebspace.net.au/UOWC128/assignment_4/images/java_script.png">
+    </div>
+
+    <!-- allows for the different states to work-->
+    <h3 id="changeText">Place your mouse over the second image to change this text!</h3>
+
+    <!-- applies the text input-->
+    <div class="text_input">
+      <input id ='image3text' type="text" placeholder="Scroll over the third image to change text! " required>
+    </div>
+
+
+    <!-- END: Task 1 Solution -->
+
+    <p>&copy; Rami Alasady</p>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- Assignment 4 (Task ?) by INSERT FULL NAME (INSERT STUDENT NUMBER) -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DPIT128: Assignment 4 (Task 6)</title>
+    <style>
+
+      /* BEGIN: Template CSS (DO NOT ALTER/REMOVE) ----------- */
+
+      body {
+        background-color: #ededed;
+        text-align: center;
+      }
+
+      input:focus, select:focus {
+        box-shadow: 0px 0px 1px 1px #95b7ee;
+        outline: none;
+      }
+
+      /* END: Template CSS (DO NOT ALTER/REMOVE) ------------- */
+
+      /* INSERT INTERNAL CSS HERE */
+
+
+      /* creating table styling to allow for proper formating */
+      table, th, td{
+        border: 1px solid #91adb9;
+        border-collapse: collapse;
+        padding: 10px;
+        width: auto;
+        margin: auto;
+      }
+
+      /* creating the background color for the table headers */
+      th{
+        background-color: #abc7d1;
+      }
+
+      tbody tr:nth-child(odd){
+        background-color: #f5f8f5;
+      }
+
+      tbody tr:nth-child(even){
+        background-color: #e3ecef;
+      }
+
+      /*applies styling to the start button */
+      input[type="button"] {
+        background-color: #ecf2f4;
+        border: 1px dotted;
+        border-radius: 3px;
+        color: #45565c;
+        margin-bottom: 15px;
+        padding: 10px;
+        width: 100px;
+      }
+
+      /* applies the hover effect over the start button */
+      input[type="button"]:hover {
+        cursor: pointer;
+      }
+
+
+    </style>
+    <script>
+
+      // INSERT INTERNAL JAVASCRIPT HERE
+
+      //Creating applied data function
+      function collectData() {
+        //sets a data array as a variable since it can be changed 
+        var data = [
+          ["DPIT128", "Introduction to Web Technology", 6, 5],
+          ["DPIT127", "Networking and Communications", 6, 5],
+          ["DPIT114", "System Analysis", 6, 5],
+          ["DPIT113", "Problem Solving", 6, 6],
+          ["DPIT111", "Programming Fundamentals", 6, 5]
+        ];
+
+        var table = document.createElement('table');
+        var header = table.createTHead();
+        var headerRow = header.insertRow(0);
+        // sets up a for loop to check how many headers are within the array. this allows for further addition 
+        var headers = ["Subject Code", "Subject Name", "Credit Points", "Hours Per Week"];
+        for (var i = 0; i < headers.length; i++) {
+          var cell = document.createElement('th');
+          cell.innerText = headers[i];
+          headerRow.appendChild(cell);
+        }
+
+        // this adds the total amount of credits found within each row 
+        var tbody = document.createElement('tbody');
+        var totalCredits = 0;
+        //checks for the length of the data variable. If the data.length is less than i it will than add additional rows unit it is greater than i
+        for (var i = 0; i < data.length; i++) {
+          var row = document.createElement('tr');
+          //For the length of the data variable every row is then given a table description equal to the arrays length 
+          for (var j = 0; j < data[i].length; j++) {
+            var cell = document.createElement('td');
+            cell.innerText = data[i][j];
+            row.appendChild(cell);
+          
+            if (j === 2) { // Credit Points column
+              totalCredits += data[i][j];
+            } 
+          }//appends the row 
+          tbody.appendChild(row);
+        }
+        //appends the table body
+        table.appendChild(tbody);
+
+        var container = document.getElementById('tableContainer');
+        container.innerHTML = ""; // Clear previous content
+        container.appendChild(table);
+
+        // Create and append total credits text below the table
+        var totalText = document.createElement('p');
+        totalText.style.fontWeight = 'bold';
+        totalText.style.marginTop = '10px';
+        totalText.innerText = 'Total Credit Points: ' + totalCredits;
+        container.appendChild(totalText);
+      }
+
+
+    
+
+    </script>
+  </head>
+  <body>
+    <h1>DPIT128: Assignment 4</h1>
+    <h2>Rami Alasady(9398533)</h2>
+    <h3>Date Due: 29/08/2025</h3>
+    <hr>
+    <p style="font-weight: bold;">
+      I have viewed the College&apos;s policy regarding Academic Integrity as provided at the following URL:<br>
+      <a href="https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf" target="_blank">
+        https://www.uowcollege.edu.au/site-assets/uow-college-australia/documents/policies-and-procedures/Academic-Integrity-and-Student-Conduct-Policy-PDF.pdf
+      </a>
+    </p>
+    <hr>
+    <h2>Task 6: Javascript Object & DOM Nodes</h2>
+
+    <!-- BEGIN: Task ? Solution -->
+    <!--Creates a heading container and div-->
+    <div>
+      <h3>Please click the following button to generate a table</h3>
+    </div>
+    <!-- Creates the start button widget-->
+    <div>
+      <input type="button" value="start" onclick="collectData();">
+    </div>
+    <!-- Allows for an empty div to inject java-script html-->
+    <div id="tableContainer"></div>
+
+    <!-- END: Task ? Solution -->
+
+    <p>&copy; Rami Alasady</p>
+  </body>
+</html>
